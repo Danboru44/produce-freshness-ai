@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>見切り商品判定アプリ</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='home.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <h1>野菜・果物見切りアプリ</h1>
+        <div class="usage-section">
+          <h2>使い方説明</h2>
+          <div id="usageText" class="foldable">
+            <p>
+              この「野菜・果物見切りアプリ」は、スーパーで見切り商品の判定をスムーズに行うために作られたツールです。以下の手順に従ってご利用ください。
+            </p>
+            <h3>1. 画像をアップロード</h3>
+            <ul>
+              <li>
+                商品を撮影し、アップロードボックスにドラッグ＆ドロップするか、クリックしてファイルを選択します。
+              </li>
+              <li>商品全体がはっきり映るように撮影してください。</li>
+            </ul>
+            <h3>2. AIによる判定</h3>
+            <ul>
+              <li>
+                画像をアップロードすると、AIが商品を分析し、見切り対象かどうかを判定します。
+              </li>
+              <li>
+                結果は「通常」「見切り」「廃棄」のいずれかとして表示されます。
+              </li>
+            </ul>
+            <h3>3. 判定結果の確認</h3>
+            <ul>
+              <li>
+                結果が表示されたら、商品ごとの処理を行います（値引きシールの貼付など）。
+              </li>
+              <li>再度別の商品を撮影して、次の判定を行うことも可能です。</li>
+            </ul>
+            <p>
+              <strong>注意:</strong>
+              商品の傷んでいる部分が映るように撮影すると、より正確な判定が行えます。
+            </p>
+          </div>
+          <button id="toggleButton">使い方説明を表示</button>
+        </div>
+        <form
+          id="imageForm"
+          action="/predict"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <div
+            class="upload-box"
+            id="uploadBox"
+            style="
+              border: 2px dashed #ccc;
+              padding: 20px;
+              text-align: center;
+              cursor: pointer;
+            "
+          >
+            <input
+              type="file"
+              id="imageInput"
+              accept="image/*"
+              name="file"
+              required
+              hidden
+            />
+            <img
+              id="preview"
+              alt="プレビュー"
+              style="display: none; max-width: 100%"
+            />
+            <div id="uploadIcon">
+              <img
+                src="{{ url_for('static', filename='Camera.jpg') }}"
+                alt="カメラアイコン"
+                class="camera-icon"
+              />
+              <p class="upload-text">ここに画像をアップロード</p>
+            </div>
+          </div>
+          <div class="submit-form">
+            <input type="submit" value="判定" />
+          </div>
+        </form>
+      </div>
+      <footer>©︎ 2024 Neo Ito</footer>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
