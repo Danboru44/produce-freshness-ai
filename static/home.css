@@ -1,0 +1,245 @@
+/* 基本のスタイル */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  background-color: #f0f0f0;
+}
+
+.back {
+  background-color: #4e6d47;
+  display: flex;
+  justify-content: flex-start;
+  padding: 20px;
+}
+
+a {
+  background-color: #fffdd0;
+  text-decoration: none;
+  color: #000;
+  border-radius: 30px;
+  margin: 20px 0px 30px 40px; /* ボタンの外側の余白 */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #4e6d47; /* 背景色 */
+  min-height: 100vh;
+}
+
+.content {
+  background-color: #e9f5e9; /* コンテンツエリアの背景色 */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 80%;
+  /*max-width: 400px;*/
+  margin: 50px 0px;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.8em;
+  margin-top: 20px;
+  color: #4e6d47;
+}
+
+h3 {
+  font-size: 1.2em;
+  margin-top: 10px;
+  color: #4e6d47;
+}
+
+p {
+  font-size: 1.1em;
+  color: #505050;
+  text-align: left;
+  margin: 10px 0;
+}
+
+ul {
+  text-align: left;
+  padding-left: 20px;
+}
+
+ul li {
+  font-size: 1.1em;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.upload-text {
+  margin-top: 10px;
+  font-size: 1em;
+  color: #505050;
+  text-align: center;
+}
+
+.submit-form {
+  margin: 20px 0;
+}
+
+.upload-box {
+  width: 300px;
+  height: 300px;
+  border: 2px dashed #aaa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  position: relative;
+  border-radius: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.upload-box:hover {
+  background-color: #f0f0f0;
+}
+
+.upload-box img {
+  width: 100px;
+  height: 100px;
+}
+
+#preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+footer {
+  background-color: rgb(255, 255, 255);
+  /*background-color: #ffffff; /* フッターの背景色 */
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  color: #696969;
+
+  position: relative;
+  bottom: 0;
+}
+
+.camera-icon {
+  width: 100px;
+  height: auto; /* アスペクト比を維持する */
+  object-fit: contain; /* 画像のアスペクト比を維持しつつ、コンテナに収まる */
+}
+
+/* 折りたたみテキスト用 */
+#usageText {
+  display: none;
+}
+
+input[type="submit"],
+button {
+  background-color: #4e6d47;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  width: 150px;
+}
+
+input[type="submit"]:hover,
+button:hover {
+  background-color: #3b5435;
+}
+
+#resultText {
+  text-align: center;
+}
+
+#imageForm {
+  margin-top: 100px;
+}
+
+/* スマホ用のスタイル（縦向き） */
+@media (max-width: 600px) {
+  .content {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  a {
+    margin: 10px 0px 5px 5px; /* ボタンの外側の余白 */
+    padding: 10px 30px; /* ボタン内の余白 */
+  }
+
+  h1 {
+    font-size: 2.5em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  h3 {
+    font-size: 1em;
+  }
+
+  .upload-box {
+    width: 200px;
+    height: 200px;
+  }
+
+  .upload-box img {
+    width: 80px;
+    height: 80px;
+  }
+
+  footer {
+    font-size: 0.8em;
+    margin-top: 30px;
+  }
+
+  input[type="submit"],
+  button {
+    width: 100%;
+    font-size: 1.2em;
+  }
+}
+
+/* パソコン用のスタイル（横向き） */
+@media (min-width: 601px) {
+  .content {
+    width: 80%;
+    padding: 30px;
+    max-width: 800px;
+  }
+
+  a {
+    margin: 20px 0px 30px 40px; /* ボタンの外側の余白 */
+    padding: 10px 40px; /* ボタン内の余白 */
+  }
+
+  h1 {
+    font-size: 3em;
+    padding-bottom: 50px;
+  }
+
+  .upload-box {
+    width: 400px;
+    height: 400px;
+  }
+
+  .upload-box img {
+    width: 100%;
+    height: 100px;
+  }
+
+  footer {
+    font-size: 1em;
+    margin-top: 30px;
+  }
+}
