@@ -59,7 +59,7 @@
 ```bash
 # リポジトリをクローン
 git clone https://github.com/Danboru44/produce-freshness-ai.git
-cd [produce-freshness-ai]
+cd produce-freshness-ai
 
 # ライブラリをインストール
 pip install -r requirements.txt
