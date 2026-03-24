@@ -68,6 +68,7 @@ pip install -r requirements.txt
 ### 推論を実行する場合
 
 training-vit.ipynbを実行すると、`weights_vit.pth` として重みがロードされます。
+
 `WeightSave/` に配置してから実行します。
 
 
