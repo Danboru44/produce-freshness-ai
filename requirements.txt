@@ -5,4 +5,4 @@ numpy
 jupyter
 seaborn
 matplotlib
-sklearn
+scikit-learn
